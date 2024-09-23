@@ -24,11 +24,11 @@ Implement the _Typewriter Text_ in your project:
 
 **1. Step - download and add**
 
-Download or clone the repo and add the file `typewriter-text_1.0.0.js` into your project.
+Download or clone the repo and add the file `typewriter-text_1.0.1.js` into your project.
 
 **2. Step - implementation**
 
-Include the `typewriter-text_1.0.0.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/typewriter-text_1.0.0.js" defer></script>` in the `<head>`-Tag
+Include the `typewriter-text_1.0.1.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/typewriter-text_1.0.1.js" defer></script>` in the `<head>`-Tag
 
 **3. Step - insert the typewriter-text HTML tag**
 
@@ -51,7 +51,7 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
     <title>Typing Text</title>
 
     <!-- 1. Insert the "typewriter-text.js" file -->
-    <script src="./path-to-the-file/typewriter-text_1.0.0.js" defer></script>
+    <script src="./path-to-the-file/typewriter-text_1.0.1.js" defer></script>
 
     <!-- 2. Insert your JavaScript file - if necessary -->
     <script src="./path-to-the-file/my-script.js" defer></script>
@@ -112,8 +112,8 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
   // One Line:
   const array_1 = [
     [
-      { char: 'H', before: '<span style="font-size: 44px">', after: '</span>' },
-      { char: 'E', before: '<span style="color: green; font-size: 16px">', after: '</span>' },
+      { char: '<span style="font-size: 44px">H</span>', intervalTime: '400' },
+      { char: '<span style="color: green; font-size: 16px">E</span>', intervalTime: '100' },
       // and so on...
     ],
   ];
@@ -121,19 +121,21 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
   // Multiple Lines:
   const array_1 = [
     [
-      { char: 'H', before: '<span style="font-size: 44px">', after: '</span>' },
-      { char: 'E', before: '<span style="color: green; font-size: 16px">', after: '</span>' },
+      { char: '<span style="font-size: 44px">H</span>', intervalTime: '400' },
+      { char: '<span style="color: green; font-size: 16px">E</span>', intervalTime: '100' },
       // and so on...
     ],
     [
-      { char: 'H', before: '<u>', after: '</u>' },
-      { char: 'o', before: '<u>', after: '</u>' },
-      { char: 'w', before: '<u>', after: '</u>' },
+      { char: '<u>H</u>', intervalTime: '400' },
+      { char: '<u>o</u>', intervalTime: '' },
+      { char: '<u>w</u>', intervalTime: '' },
       // and so on...
     ],
     // and so on...
   ];
   ```
+
+  The `intervalTime` key can be used to determine the `interval-time` attribute for each individual letter in milliseconds. If the string is empty, the interval time is not changed.
 
   **See examples 8 and 9.**
 
