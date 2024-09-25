@@ -8,7 +8,7 @@ The text can be displayed once or endlessly.
 
 One or more lines of text can be displayed.
 
-The HTML tag in which the text is to be displayed can be freely selected, e.g.: div, span, p, h1 - h6.
+The HTML tag in which the text is to be displayed can be freely selected, e.g.: `div`, `span`, `p`, `h1` - `h6`.
 
 Each individual letter can also be individually designed with CSS, e.g. if a letter should have a different color, or individual words or letters should be italicized or underlined.
 
@@ -24,11 +24,11 @@ Implement the _Typewriter Text_ in your project:
 
 **1. Step - download and add**
 
-Download or clone the repo and add the file `typewriter-text_1.0.1.js` into your project.
+Download or clone the repo and add the file `typewriter-text_1.1.0.js` into your project.
 
 **2. Step - implementation**
 
-Include the `typewriter-text_1.0.1.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/typewriter-text_1.0.1.js" defer></script>` in the `<head>`-Tag
+Include the `typewriter-text_1.1.0.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/typewriter-text_1.1.0.js" defer></script>` in the `<head>`-Tag
 
 **3. Step - insert the typewriter-text HTML tag**
 
@@ -51,7 +51,7 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
     <title>Typing Text</title>
 
     <!-- 1. Insert the "typewriter-text.js" file -->
-    <script src="./path-to-the-file/typewriter-text_1.0.1.js" defer></script>
+    <script src="./path-to-the-file/typewriter-text_1.1.0.js" defer></script>
 
     <!-- 2. Insert your JavaScript file - if necessary -->
     <script src="./path-to-the-file/my-script.js" defer></script>
@@ -73,6 +73,10 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
 - `displayed-text`
 
   The text to be displayed. If several lines of text are to be displayed, use the `setMultipleLines()` function. **Do not use this attribute if several text lines are set with the function `setMultipleLines()`.**
+
+- `set-position`
+
+  This can be used to set the position of the text to `left` (default), `center` and `right`.
 
 - `is-endless`
 
@@ -138,6 +142,30 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
   The `intervalTime` key can be used to determine the `interval-time` attribute for each individual letter in milliseconds. If the string is empty, the interval time is not changed.
 
   **See examples 8 and 9.**
+
+- `is-cursor`
+
+  If the attribute is set, the cursor is displayed.
+
+  A value does not have to be specified.
+
+- `style-cursor`
+
+  This attribute is for styling the cursor. The value is CSS, e.g: `style-cursor="width: 3px; background: rgb(17, 119, 150); border-radius: 2px;"`
+
+  This gives you complete control over the design of the cursor.
+
+  To change the speed at which the cursor flashes, enter the CSS value `animation: blink 700ms infinite;` with the corresponding milliseconds.
+
+- `is-reverse`
+
+  If the attribute is set, the text is removed letter by letter after it has been displayed.
+
+  **The attribute `is-endless` must also be set for this.**
+
+  A value does not have to be specified.
+
+  **See examples 13 - 15.**
 
 ## Functions
 
