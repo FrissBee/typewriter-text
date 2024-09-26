@@ -32,17 +32,16 @@
     { char: '<i style="color: red">l</i>', intervalTime: '100' },
     { char: '<span style="font-size: 14px">O</span>', intervalTime: '400' },
     { char: ' ', intervalTime: '10' },
-    { char: icon_1, intervalTime: '100' },
+    { char: icon_1, intervalTime: '1000' },
     { char: ' ', intervalTime: '10' },
     { char: '<span style="color: red; font-size: 44px">W</span>', intervalTime: '100' },
     { char: '<span style="color: green; font-size: 16px">O</span>', intervalTime: '400' },
     { char: 'R', intervalTime: '100' },
     { char: '<span style="font-size: 14px">L</span>', intervalTime: '400' },
     { char: '<b>D</b>', intervalTime: '400' },
-    { char: '<span style="color: red; font-size: 44px">!</span>', intervalTime: '100' },
+    { char: '<span style="color: red; font-size: 44px">!</span>', intervalTime: '500' },
     { char: ' ', intervalTime: '10' },
-    { char: img_1, intervalTime: '3000' },
-    { char: '', intervalTime: '200' },
+    { char: img_1, intervalTime: '1000' },
   ];
 
   const individualArray_2 = [
@@ -73,15 +72,14 @@
     { char: 'Try', intervalTime: '400' },
     { char: ' ', intervalTime: '100' },
     { char: 'our', intervalTime: '400' },
-    { char: ' ', intervalTime: '100' },
+    { char: ' ', intervalTime: '200' },
     { char: '<i style="color: brown"><b>newest</b></i>', intervalTime: '400' },
     { char: ' ', intervalTime: '100' },
     { char: 'ice', intervalTime: '400' },
     { char: ' ', intervalTime: '100' },
     { char: 'cream', intervalTime: '400' },
-    { char: ' ', intervalTime: '100' },
-    { char: img_2, intervalTime: '4000' },
-    { char: '', intervalTime: '200' },
+    { char: ' ', intervalTime: '200' },
+    { char: img_2, intervalTime: '100' },
   ];
 
   const individualArray_C = [individualArray_3];
