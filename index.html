@@ -12,10 +12,10 @@
       crossorigin="anonymous"
     />
 
-    <!-- Insert the "typewriter-text_1.1.0.js" file -->
-    <script src="./assets/js/typewriter-text_1.1.0.js" defer></script>
+    <!-- 1. Insert the "typewriter-text_1.2.0.js" file -->
+    <script src="./assets/js/typewriter-text_1.2.0.js" defer></script>
 
-    <!-- Insert your JavaScript file -->
+    <!-- 2. Insert your JavaScript file -->
     <script src="./assets/js/my-script.js" defer></script>
 
     <style>
@@ -46,8 +46,9 @@
         min-height: 180px;
       }
       .with-image {
-        background-image: url('https://monster-cafe.com/images/home/home-top.jpg');
+        background-image: url('./images/skyline.jpg');
         background-repeat: no-repeat;
+        background-position: bottom center;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -111,10 +112,12 @@
           transform: rotate(0deg) scale(1);
         }
       }
-      /* 12. Example */
-      typewriter-text.demo-12::part(container-typewriter-text) {
+      /* 12. + 16. Example */
+      typewriter-text.demo-12::part(container-typewriter-text),
+      typewriter-text.demo-16::part(container-typewriter-text) {
         background-color: rgb(0, 0, 0);
         padding: 6px 4px 4px;
+        height: 28px;
       }
     </style>
   </head>
@@ -124,7 +127,8 @@
         <div class="container py-4">
           <h3>Typewriter Text</h3>
           <div>
-            Download and documentation on <a href="https://github.com/FrissBee/typewriter-text" target="_blank" rel="noopener noreferrer">GitHub</a><br />
+            Download and documentation on
+            <a href="https://github.com/FrissBee/typewriter-text" target="_blank" rel="noopener noreferrer">GitHub</a><br />
             Created by <a href="https://frissbee.de/" target="_blank" rel="noopener noreferrer">FrissBee.de</a>
           </div>
         </div>
@@ -194,7 +198,14 @@
       </div>
       <section class="mb-5 section-example-10">
         <div class="container py-5">
-          <typewriter-text class="demo-10-a" displayed-text="Welcome to Ice Cream Dream!" interval-time="100" is-endless hold-line="60" set-position="center">
+          <typewriter-text
+            class="demo-10-a"
+            displayed-text="Welcome to Ice Cream Dream!"
+            interval-time="100"
+            is-endless
+            hold-line="60"
+            set-position="center"
+          >
             <h1 class="text-white" style="height: 60px; font-family: 'Courier New', Courier, monospace"></h1>
           </typewriter-text>
           <typewriter-text class="demo-10-b" interval-time="200" is-endless hold-line="10" set-position="center">
@@ -213,7 +224,7 @@
         </typewriter-text>
         <hr />
 
-        <p><b>11. Example: one text line - endless - with cursor - cursor styled</b></p>
+        <p><b>12. Example: one text line - endless - with cursor - cursor styled</b></p>
         <typewriter-text
           class="demo-12"
           displayed-text="Hello world!"
@@ -223,7 +234,10 @@
           is-cursor
           style-cursor="height: 14px; width: 10px; background: #c7c7c7; border-radius: 1px; margin-top: 6px"
         >
-          <div class="element-height" style="color: #13b937; font-size: 18px; font-family: 'Courier New', Courier, monospace; padding: 0; margin: 0"></div>
+          <div
+            class="element-height"
+            style="color: #13b937; font-size: 18px; font-family: 'Courier New', Courier, monospace; padding: 0; margin: 0"
+          ></div>
         </typewriter-text>
         <hr />
 
@@ -245,17 +259,69 @@
         <p><b>14. Example: several lines of text - endless - with cursor - cursor styled - with reverse</b></p>
         <div class="d-flex">
           <div class="me-2" style="color: orange; font-size: 24px"><b>Welcome</b></div>
-          <typewriter-text class="demo-14" is-endless interval-time="50" hold-line="60" is-reverse is-cursor style-cursor="width: 3px; background: green; border-radius: 2px;">
+          <typewriter-text
+            class="demo-14"
+            is-endless
+            interval-time="50"
+            hold-line="60"
+            is-reverse
+            is-cursor
+            style-cursor="width: 3px; background: green; border-radius: 2px;"
+          >
             <div class="element-height font-color-1" style="font-size: 24px"></div>
           </typewriter-text>
         </div>
         <hr />
 
         <p><b>15. Example: one text line - endless - individual - with cursor - cursor styled - with reverse</b></p>
-        <typewriter-text class="demo-15" is-endless is-individual hold-line="2" is-reverse is-cursor style-cursor="margin-left: 8px; height: 60px; width: 3px; background: brown; border-radius: 2px;">
-          <div class="font-color-2" style="height: 50px"></div>
+        <typewriter-text
+          class="demo-15"
+          is-endless
+          is-individual
+          hold-line="2"
+          is-reverse
+          is-cursor
+          style-cursor="margin-left: 4px; height: 60px; width: 3px; background: brown; border-radius: 2px;"
+        >
+          <div class="font-color-2" style="height: 50px; font-size: 24px"></div>
         </typewriter-text>
         <hr />
+
+        <p><b>16. Example: several lines of text - endless - with cursor - cursor styled - fade to top</b></p>
+        <typewriter-text
+          class="demo-16"
+          is-endless
+          is-cursor
+          style-cursor="height: 14px; width: 8px; background: #c7c7c7; border-radius: 1px; margin-top: 6px"
+          interval-time="100"
+          hold-line="6"
+          fade-time="1000"
+          fade-height="40px"
+        >
+          <div
+            class="element-height"
+            style="color: #c7c7c7; font-size: 18px; font-family: 'Courier New', Courier, monospace; padding: 0; margin: 0"
+          ></div>
+        </typewriter-text>
+        <hr />
+
+        <p><b>17. Example: several lines of text - endless - individual - with cursor - cursor styled - fade to top</b></p>
+        <typewriter-text
+          class="demo-17"
+          is-endless
+          is-individual
+          is-cursor
+          style-container="border: 1px solid #dedede; height: 70px; padding: 4px 20px; background: #f0f0f0; border-radius: 4px;"
+          style-cursor="margin-left: 8px; height: 50px; width: 2px; background: #a1a1a1; border-radius: 2px; margin-top: 10px;"
+          hold-line="2"
+          fade-time="800"
+          fade-height="80px"
+        >
+          <div class="font-color-2" style="font-size: 44px"></div>
+        </typewriter-text>
+        <hr />
+
+        <div style="height: 100px"></div>
       </div>
     </main>
   </body>

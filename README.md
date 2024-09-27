@@ -24,11 +24,11 @@ Implement the _Typewriter Text_ in your project:
 
 **1. Step - download and add**
 
-Download or clone the repo and add the file `typewriter-text_1.1.0.js` into your project.
+Download or clone the repo and add the file `typewriter-text_1.2.0.js` into your project.
 
 **2. Step - implementation**
 
-Include the `typewriter-text_1.1.0.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/typewriter-text_1.1.0.js" defer></script>` in the `<head>`-Tag
+Include the `typewriter-text_1.2.0.js` file in the corresponding HTML or PHP file with `<script src="./path-to-the-file/typewriter-text_1.2.0.js" defer></script>` in the `<head>`-Tag
 
 **3. Step - insert the typewriter-text HTML tag**
 
@@ -51,7 +51,7 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
     <title>Typing Text</title>
 
     <!-- 1. Insert the "typewriter-text.js" file -->
-    <script src="./path-to-the-file/typewriter-text_1.1.0.js" defer></script>
+    <script src="./path-to-the-file/typewriter-text_1.2.0.js" defer></script>
 
     <!-- 2. Insert your JavaScript file - if necessary -->
     <script src="./path-to-the-file/my-script.js" defer></script>
@@ -59,7 +59,7 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
   <body>
     <main>
       <!--3.  Insert the "typewriter-text" tag -->
-      <typewriter-text class="demo-1" displayed-text="Hello world!">
+      <typewriter-text displayed-text="Hello world!">
         <!-- 4. Add the desired HTML tag in which the text is to be displayed, e.g.: div, span, p, h1 - h6. -->
         <h3 class="my-custom-style-class"></h3>
       </typewriter-text>
@@ -72,7 +72,11 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
 
 - `displayed-text`
 
-  The text to be displayed. If several lines of text are to be displayed, use the `setMultipleLines()` function. **Do not use this attribute if several text lines are set with the function `setMultipleLines()`.**
+  The text to be displayed. If several lines of text are to be displayed, use the `setMultipleLines()` function.
+
+  Example: `displayed-text="Hello world!"`.
+
+  **Do not use this attribute if several text lines are set with the function `setMultipleLines()`.**
 
 - `set-position`
 
@@ -86,7 +90,9 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
 
 - `interval-time`
 
-  The speed at which the individual letters are to be displayed is specified in milliseconds, e.g.: `interval-time=“200”` means a delay of 200 milliseconds.
+  The speed at which the individual letters are to be displayed is specified in milliseconds.
+
+  Example: `interval-time="200"`.
 
   Default value: "200"
 
@@ -98,7 +104,9 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
 
 - `delay-time`
 
-  If the text should only be displayed after a certain time, i.e. with a delay. The value is specified in milliseconds, e.g.: `delay-time=“2000”` means a delay of 2 seconds.
+  If the text should only be displayed after a certain time, i.e. with a delay. The value is specified in milliseconds.
+
+  Example: `delay-time=“2000”` (means a delay of 2 seconds).
 
   Default value: "0"
 
@@ -108,7 +116,9 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
 
   A value does not have to be specified.
 
-  The text must then be passed with the function `setMultipleLines()`. **Do not use the `displayed-text` attribute in this case.**
+  The text must then be passed with the function `setMultipleLines()`.
+
+  **Do not use the `displayed-text` attribute in this case.**
 
   The passed array must have a certain structure:
 
@@ -151,9 +161,13 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
 
 - `style-cursor`
 
-  This attribute is for styling the cursor. The value is CSS, e.g: `style-cursor="width: 3px; background: rgb(17, 119, 150); border-radius: 2px;"`
+  This attribute is for styling the cursor. The value is CSS.
+
+  Example: `style-cursor="width: 3px; background: rgb(17, 119, 150); border-radius: 2px;"`
 
   This gives you complete control over the design of the cursor.
+
+  Alternatively, you can also use `part`. See section "Design with CSS".
 
   To change the speed at which the cursor flashes, enter the CSS value `animation: blink 700ms infinite;` with the corresponding milliseconds.
 
@@ -167,13 +181,39 @@ Use the attributes an functions (see below) to customize the _Typewriter Text_.
 
   **See examples 13 - 15.**
 
+- `fade-time`
+
+  If this attribute is set, the text will fade upwards.
+
+  The value specifies the time in milliseconds it should take for the text to fade out.
+
+  Example: `fade-time="800"`.
+
+  **The `fade-height` attribute must also be set for this.**
+
+- `fade-height`
+
+  This attribute is used to define the height at which the text should fade upwards until it has disappeared from the visible area.
+
+  Example: `fade-height="80px"`.
+
+- `style-container`
+
+  This attribute can be used to style the container with CSS.
+
+  Example: `style-container="border: 1px solid #dedede; height: 70px; padding: 4px; background: #f0f0f0; border-radius: 4px;"`
+
+  This gives you complete control over the design of the container.
+
+  Alternatively, you can also use `part`. See section "Design with CSS".
+
 ## Functions
 
 **setMultipleLines()**
 
 If you want to display more than one line of text, use the `setMultipleLines()` function. Pass the function an array with the desired text lines.
 
-Here is an example:
+Example:
 
 ```js
 const typewriterText = document.querySelector('typewriter-text');
@@ -192,6 +232,7 @@ If you want to have more influence on the design, you can do this in your CSS fi
 You can design:
 
 - `container-typewriter-text`
+- `cursor`
 
 Here a simple example:
 
@@ -201,5 +242,14 @@ typewriter-text::part(container-typewriter-text) {
   padding: 14px 10px 10px;
   border-radius: 4px;
   text-align: center;
+}
+
+typewriter-text::part(cursor) {
+  margin-left: 8px;
+  height: 50px;
+  width: 2px;
+  background: #a1a1a1;
+  border-radius: 2px;
+  margin-top: 10px;
 }
 ```

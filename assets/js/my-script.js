@@ -13,6 +13,8 @@
   DOM.demo_10_c = document.querySelector('typewriter-text.demo-10-c');
   DOM.demo_14 = document.querySelector('typewriter-text.demo-14');
   DOM.demo_15 = document.querySelector('typewriter-text.demo-15');
+  DOM.demo_16 = document.querySelector('typewriter-text.demo-16');
+  DOM.demo_17 = document.querySelector('typewriter-text.demo-17');
 
   DOM.btnToggle = document.querySelector('button.btn-toggle');
 
@@ -32,7 +34,7 @@
     { char: '<i style="color: red">l</i>', intervalTime: '100' },
     { char: '<span style="font-size: 14px">O</span>', intervalTime: '400' },
     { char: ' ', intervalTime: '10' },
-    { char: icon_1, intervalTime: '1000' },
+    { char: icon_1, intervalTime: '2000' },
     { char: ' ', intervalTime: '10' },
     { char: '<span style="color: red; font-size: 44px">W</span>', intervalTime: '100' },
     { char: '<span style="color: green; font-size: 16px">O</span>', intervalTime: '400' },
@@ -107,6 +109,10 @@
     DOM.demo_14.setMultipleLines(textArray_1);
 
     DOM.demo_15.setMultipleLines(individualArray_A);
+
+    DOM.demo_16.setMultipleLines(textArray_1);
+
+    DOM.demo_17.setMultipleLines(individualArray_B);
   };
 
   init();
